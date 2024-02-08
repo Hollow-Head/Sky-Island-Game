@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clgrsnn5m5bn5"]
+
+[ext_resource type="Script" path="res://Scripts/RotateIslandExperimental.gd" id="1_ua5e7"]
+[ext_resource type="Texture2D" uid="uid://b2dbklphab20r" path="res://Sprites/FancyCircle.png" id="2_emcw1"]
+
+[node name="Rotate Island Experimental" type="Node"]
+script = ExtResource("1_ua5e7")
+
+[node name="Island" type="Sprite2D" parent="."]
+position = Vector2(171, 128)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_emcw1")
+
+[node name="Point" type="Marker2D" parent="."]

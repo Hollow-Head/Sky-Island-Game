@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8gx26dayf4n6"]
+[gd_scene load_steps=6 format=3 uid="uid://c8gx26dayf4n6"]
 
 [ext_resource type="PackedScene" uid="uid://biwjt8wwbkgf8" path="res://Scenes/Player.tscn" id="1_8bx5u"]
 [ext_resource type="PackedScene" uid="uid://bwuam0srdawdw" path="res://Scenes/Island.tscn" id="2_2ubhq"]
 [ext_resource type="Texture2D" uid="uid://cpajjn0oe0ll0" path="res://Sprites/IslandConcept.jpg" id="2_nqs0h"]
 [ext_resource type="Script" path="res://Scripts/GameTime.gd" id="4_pqbyu"]
+[ext_resource type="PackedScene" uid="uid://clgrsnn5m5bn5" path="res://Scenes/RotateIslandExperimental.tscn" id="5_f5gd8"]
 
 [node name="Main" type="Node"]
 
@@ -16,5 +17,7 @@ texture = ExtResource("2_nqs0h")
 [node name="Game Time" type="Timer" parent="."]
 script = ExtResource("4_pqbyu")
 horaInicial = 6
+
+[node name="Rotate Island Experimental" parent="." instance=ExtResource("5_f5gd8")]
 
 [connection signal="timeout" from="Game Time" to="Game Time" method="_on_timeout"]
