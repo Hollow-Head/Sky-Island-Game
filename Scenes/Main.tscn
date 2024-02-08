@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8gx26dayf4n6"]
+[gd_scene load_steps=4 format=3 uid="uid://c8gx26dayf4n6"]
 
 [ext_resource type="PackedScene" uid="uid://biwjt8wwbkgf8" path="res://Scenes/Player.tscn" id="1_8bx5u"]
 [ext_resource type="PackedScene" uid="uid://bwuam0srdawdw" path="res://Scenes/Island.tscn" id="2_2ubhq"]
+[ext_resource type="Texture2D" uid="uid://cpajjn0oe0ll0" path="res://Sprites/IslandConcept.jpg" id="2_nqs0h"]
 
-[node name="Node" type="Node"]
+[node name="Main" type="Node"]
+
+[node name="Main Island" parent="." instance=ExtResource("2_2ubhq")]
+scale = Vector2(2.31445, 2.31445)
+texture = ExtResource("2_nqs0h")
 
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
-position = Vector2(323, -15)
 
-[node name="Island" parent="." instance=ExtResource("2_2ubhq")]
-position = Vector2(204, 241)
+[node name="Camera2D" type="Camera2D" parent="Player"]
