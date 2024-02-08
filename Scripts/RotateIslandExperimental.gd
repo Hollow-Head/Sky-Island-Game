@@ -1,5 +1,7 @@
 extends Node
 
+# https://www.youtube.com/watch?v=2Ywhk_T85Vg got help with this
+
 @onready var point : Marker2D = get_node("Point")
 @onready var island : Sprite2D = get_node("Island")
 
