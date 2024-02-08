@@ -2,15 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://biwjt8wwbkgf8" path="res://Scenes/Player.tscn" id="1_8bx5u"]
 [ext_resource type="PackedScene" uid="uid://bwuam0srdawdw" path="res://Scenes/Island.tscn" id="2_2ubhq"]
-[ext_resource type="Texture2D" uid="uid://cpajjn0oe0ll0" path="res://Sprites/IslandConcept.jpg" id="2_nqs0h"]
+[ext_resource type="Texture2D" uid="uid://cmwl385grv3nj" path="res://Sprites/MainIslandShapeConcept.png" id="2_v6oit"]
 [ext_resource type="Script" path="res://Scripts/GameTime.gd" id="4_pqbyu"]
 [ext_resource type="PackedScene" uid="uid://clgrsnn5m5bn5" path="res://Scenes/RotateIslandExperimental.tscn" id="5_f5gd8"]
 
 [node name="Main" type="Node"]
 
 [node name="Main Island" parent="." instance=ExtResource("2_2ubhq")]
-scale = Vector2(2.31445, 2.31445)
-texture = ExtResource("2_nqs0h")
+position = Vector2(-949, -21)
+scale = Vector2(1.51562, 1.51562)
+texture = ExtResource("2_v6oit")
 
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
 
