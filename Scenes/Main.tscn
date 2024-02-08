@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8gx26dayf4n6"]
+[gd_scene load_steps=7 format=3 uid="uid://c8gx26dayf4n6"]
 
 [ext_resource type="PackedScene" uid="uid://biwjt8wwbkgf8" path="res://Scenes/Player.tscn" id="1_8bx5u"]
 [ext_resource type="PackedScene" uid="uid://bwuam0srdawdw" path="res://Scenes/Island.tscn" id="2_2ubhq"]
-[ext_resource type="Texture2D" uid="uid://cmwl385grv3nj" path="res://Sprites/MainIslandShapeConcept.png" id="2_v6oit"]
+[ext_resource type="Texture2D" uid="uid://cmwl385grv3nj" path="res://Sprites/MainIsland.png" id="2_v6oit"]
 [ext_resource type="Script" path="res://Scripts/GameTime.gd" id="4_pqbyu"]
-[ext_resource type="PackedScene" uid="uid://clgrsnn5m5bn5" path="res://Scenes/RotateIslandExperimental.tscn" id="5_f5gd8"]
+[ext_resource type="PackedScene" uid="uid://c5tsqh32nvpxq" path="res://Scenes/RotateIslandExperimental.tscn" id="5_f5gd8"]
+[ext_resource type="Texture2D" uid="uid://cll6tby4fm5ha" path="res://Sprites/Island_1.png" id="6_47hey"]
 
 [node name="Main" type="Node"]
 
@@ -18,9 +19,20 @@ script = ExtResource("4_pqbyu")
 horaInicial = 6
 
 [node name="Rotate Island Experimental" parent="." instance=ExtResource("5_f5gd8")]
+position = Vector2(-2429, -1074)
 translationSpeed = 0.0
+rotationSpeed = 0.5
+
+[node name="Island" parent="Rotate Island Experimental" index="0"]
+position = Vector2(-385.25, -87)
+scale = Vector2(0.938232, 1.34473)
+texture = ExtResource("6_47hey")
+
+[node name="Point" parent="Rotate Island Experimental" index="1"]
+position = Vector2(-768, -99)
 
 [node name="Rotate Island Experimental2" parent="." instance=ExtResource("5_f5gd8")]
+position = Vector2(225, 246)
 radius = 700.0
 translationSpeed = 0.0
 rotationSpeed = 1.5
@@ -28,6 +40,10 @@ rotationStartAngle = 180
 
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
 
+[node name="Camera2D" parent="Player" index="2"]
+zoom = Vector2(0.3, 0.3)
+
 [connection signal="timeout" from="Game Time" to="Game Time" method="_on_timeout"]
 
 [editable path="Rotate Island Experimental"]
+[editable path="Player"]
