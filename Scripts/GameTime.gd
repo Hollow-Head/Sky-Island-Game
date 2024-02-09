@@ -1,5 +1,7 @@
 extends Timer
 
+#TODO change every variable to english
+
 @export var minutoInicial : int
 @export var horaInicial : int
 
