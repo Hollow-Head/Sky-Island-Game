@@ -5,7 +5,9 @@
 [node name="Rotate Island Experimental" type="Area2D"]
 script = ExtResource("1_ua5e7")
 
+[node name="Point" type="Marker2D" parent="."]
+
 [node name="Island" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
-[node name="Point" type="Marker2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

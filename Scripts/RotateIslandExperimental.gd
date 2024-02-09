@@ -39,13 +39,25 @@ func orbitTranslation(delta : float):
 		translationAngle += delta
 	else:
 		translationAngle -= delta
-	# self.position = Vector2(cos(translationAngle * Speed) * radius, 
-#							sin(translationAngle * Speed) * radius) + point.global_position
+	var childsNodes = get_children()
+	
+	# It'll translate everything in the scene, except the first node, which is the point, if u change, big mess
+	for N in childsNodes.size():
+		if N != 0:
+			childsNodes[N].position = Vector2(cos(translationAngle * Speed) * radius, 
+			sin(translationAngle * Speed) * radius) + point.position
+		pass
 
 func orbitRotation(delta : float):
 	if clockwise:
 		rotationAngle += delta
 	else:
 		rotationAngle -= delta
-	self.rotation = rotationAngle * speed
+	
+	# It'll rotate everything in the scene, except the first node, which is the point, if u change, big mess
+	var childsNodes = get_children()
+	for N in childsNodes.size():
+		if N != 0:
+			childsNodes[N].rotation = rotationAngle * speed
+		pass
 	pass
