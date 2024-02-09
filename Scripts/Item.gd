@@ -6,7 +6,9 @@ extends InteractPlayer
 const lines: Array[String] = [
 	"Well well well, looks like I'm a speaking key!",
 	"I wish I was a pig with wings! Or a president.",
-	"Maybe both..."
+	"Maybe both...",
+	"Brazil is the country with the largest Japanese community outside of Japan. 
+	In São Paulo alone, more than 600,000 Japanese people live there."
 ]
 
 func _ready():
@@ -22,4 +24,6 @@ func _process(delta):
 	if isInteracting:
 		# You can advance dialog with "mouse left"
 		DialogueManager.startDialog(sprite.global_position, lines, 100)
-	pass
+
+func _on_body_exited(body):
+	DialogueManager.endDialog()

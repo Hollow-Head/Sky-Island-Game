@@ -8,15 +8,23 @@ const MAX_WIDTH = 256
 var text := ""
 var letterIndex := 0
 
-var letterTime = 0.03
-var spaceTime = 0.06
-var punctuationTime = 0.2
+var initLetterTime : float
+var initSpaceTime : float
+var initPunctuationTime : float
+
+@export_category("Time")
+@export var letterTime = 0.06
+@export var spaceTime = 0.12
+@export var punctuationTime = 0.4
 
 var finishedDisplaying := false
 
 var spriteHeight := 0.0
 
 func _ready():
+	initLetterTime = letterTime
+	initSpaceTime = spaceTime
+	initPunctuationTime = punctuationTime
 	pass
 
 func _process(delta):
@@ -24,7 +32,7 @@ func _process(delta):
 
 func displayText(textToDisplay : String):
 	text = textToDisplay
-	label.text = textToDisplay
+	label.text = text
 	await resized
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
 	if size.x > MAX_WIDTH:
@@ -45,6 +53,7 @@ func displayLetter():
 		finishedDisplaying = true
 		return
 	
+	# Each group of character will take a different time to display another letter
 	match text[letterIndex]:
 		",", ".", "?", "!":
 			timer.start(punctuationTime)
@@ -53,6 +62,10 @@ func displayLetter():
 		_:
 			timer.start(letterTime)
 
+func textSpeed(speed : float):
+	letterTime = initLetterTime / speed
+	spaceTime = initSpaceTime / speed
+	punctuationTime = initPunctuationTime / speed
 
 func _on_letter_display_timer_timeout():
 	displayLetter()
