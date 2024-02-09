@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://ui5q16y3t8qe"]
+[gd_scene load_steps=2 format=3 uid="uid://d3jn0p0f0yvx8"]
+
+[ext_resource type="Script" path="res://Scripts/Item.gd" id="1_nko6p"]
 
 [node name="Item" type="Area2D"]
+script = ExtResource("1_nko6p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
