@@ -50,9 +50,6 @@ shape = SubResource("CircleShape2D_mobc3")
 
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
 
-[node name="Camera2D" parent="Player" index="2"]
-zoom = Vector2(0.3, 0.3)
-
 [connection signal="timeout" from="Game Time" to="Game Time" method="_on_timeout"]
 
 [editable path="Rotate Island Experimental"]

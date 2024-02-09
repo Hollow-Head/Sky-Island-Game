@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://biwjt8wwbkgf8"]
+[gd_scene load_steps=6 format=3 uid="uid://biwjt8wwbkgf8"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ydkxx"]
 [ext_resource type="Texture2D" uid="uid://myjedlln5k0r" path="res://Sprites/PlayerConcept.png" id="2_82yvj"]
 [ext_resource type="Script" path="res://Scripts/TimeText.gd" id="3_8qf8m"]
+[ext_resource type="Script" path="res://Scripts/CameraPlayer.gd" id="3_isuy2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_43em7"]
 radius = 33.0151
@@ -19,7 +20,8 @@ texture = ExtResource("2_82yvj")
 position = Vector2(2.08165e-12, 14)
 shape = SubResource("CircleShape2D_43em7")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="CameraPlayer" type="Camera2D" parent="."]
+script = ExtResource("3_isuy2")
 
 [node name="ClockUI" type="ColorRect" parent="."]
 offset_left = 274.0
