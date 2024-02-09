@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8gx26dayf4n6"]
+[gd_scene load_steps=12 format=3 uid="uid://c8gx26dayf4n6"]
 
 [ext_resource type="PackedScene" uid="uid://biwjt8wwbkgf8" path="res://Scenes/Player.tscn" id="1_8bx5u"]
 [ext_resource type="PackedScene" uid="uid://bwuam0srdawdw" path="res://Scenes/Island.tscn" id="2_2ubhq"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c5tsqh32nvpxq" path="res://Scenes/RotateIslandExperimental.tscn" id="5_f5gd8"]
 [ext_resource type="PackedScene" uid="uid://d3jn0p0f0yvx8" path="res://Scenes/Item.tscn" id="6_4fnw6"]
 [ext_resource type="Texture2D" uid="uid://cll6tby4fm5ha" path="res://Sprites/Island_1.png" id="6_47hey"]
+[ext_resource type="Texture2D" uid="uid://pr6k62aa4j0r" path="res://Sprites/letterE.png" id="7_24c4v"]
 [ext_resource type="Texture2D" uid="uid://dgcruho3n0jms" path="res://Sprites/Key.png" id="7_f7h40"]
+[ext_resource type="PackedScene" uid="uid://cgwuib6ituju7" path="res://Scenes/TextBox.tscn" id="10_540bd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mobc3"]
 radius = 109.693
@@ -48,10 +50,16 @@ texture = ExtResource("7_f7h40")
 position = Vector2(72.5, -279.5)
 shape = SubResource("CircleShape2D_mobc3")
 
+[node name="LetterE" type="Sprite2D" parent="Item"]
+visible = false
+texture_filter = 1
+position = Vector2(69, -380)
+scale = Vector2(0.168966, 0.229328)
+texture = ExtResource("7_24c4v")
+
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
 
-[node name="Camera2D" parent="Player" index="2"]
-zoom = Vector2(0.3, 0.3)
+[node name="TextBox" parent="." instance=ExtResource("10_540bd")]
 
 [connection signal="timeout" from="Game Time" to="Game Time" method="_on_timeout"]
 
