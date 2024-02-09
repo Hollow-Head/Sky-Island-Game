@@ -2,25 +2,27 @@ extends Node
 
 # https://www.youtube.com/watch?v=2Ywhk_T85Vg got help with this
 
+var translationAngle := 0.0
+var rotationAngle := 0.0
+
 @onready var point : Marker2D = get_node("Point")
 @onready var island : Sprite2D = get_node("Island")
 
-var translationAngle := 0.0
+@export_category("Island Rotation")
 
-@export var translationClockwise := true
+@export_group("Translation")
+@export var Clockwise := true
 @export var radius := 400.0
-@export var translationSpeed := 1.0
-@export var translationStartAngle := 0
+@export var Speed := 1.0
+@export_range(-360, 360) var StartAngle := 0
 
-var rotationAngle := 0.0
-
-@export var rotationClockwise := true
-@export var rotationSpeed := 1.0
-@export var rotationStartAngle := 0
+@export_group("Rotation")
+@export var clockwise := true
+@export var speed := 1.0
+@export_range(-360, 360) var startAngle := 0
 
 func _ready():
-	translationAngle -= deg_to_rad(translationStartAngle)
-	rotationAngle -= deg_to_rad(rotationStartAngle)
+	initAngle()
 	pass
 
 func _process(delta):
@@ -28,18 +30,22 @@ func _process(delta):
 	orbitRotation(delta)
 	pass
 
+func initAngle():
+	translationAngle -= deg_to_rad(StartAngle)
+	translationAngle -= deg_to_rad(StartAngle)
+
 func orbitTranslation(delta : float):
-	if translationClockwise:
+	if Clockwise:
 		translationAngle += delta
 	else:
 		translationAngle -= delta
-	island.global_position = Vector2(cos(translationAngle * translationSpeed) * radius, 
-									sin(translationAngle * translationSpeed) * radius) + point.global_position
+	island.global_position = Vector2(cos(translationAngle * Speed) * radius, 
+									sin(translationAngle * Speed) * radius) + point.global_position
 
 func orbitRotation(delta : float):
-	if rotationClockwise:
+	if clockwise:
 		rotationAngle += delta
 	else:
 		rotationAngle -= delta
-	island.global_rotation = rotationAngle * rotationSpeed
+	island.global_rotation = rotationAngle * speed
 	pass

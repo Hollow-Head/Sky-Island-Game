@@ -19,31 +19,22 @@ script = ExtResource("4_pqbyu")
 horaInicial = 6
 
 [node name="Rotate Island Experimental" parent="." instance=ExtResource("5_f5gd8")]
-position = Vector2(-2429, -1074)
-translationSpeed = 0.0
-rotationSpeed = 0.5
+position = Vector2(-2857, -1041)
+Speed = 0.0
 
 [node name="Island" parent="Rotate Island Experimental" index="0"]
-position = Vector2(-385.25, -87)
-scale = Vector2(0.938232, 1.34473)
+scale = Vector2(1, 1)
 texture = ExtResource("6_47hey")
 
 [node name="Point" parent="Rotate Island Experimental" index="1"]
-position = Vector2(-768, -99)
+position = Vector2(-381, 5)
 
 [node name="Rotate Island Experimental2" parent="." instance=ExtResource("5_f5gd8")]
 position = Vector2(225, 246)
 radius = 700.0
-translationSpeed = 0.0
-rotationSpeed = 1.5
-rotationStartAngle = 180
 
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
-
-[node name="Camera2D" parent="Player" index="2"]
-zoom = Vector2(0.3, 0.3)
 
 [connection signal="timeout" from="Game Time" to="Game Time" method="_on_timeout"]
 
 [editable path="Rotate Island Experimental"]
-[editable path="Player"]
