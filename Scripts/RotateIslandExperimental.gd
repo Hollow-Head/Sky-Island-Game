@@ -39,13 +39,13 @@ func orbitTranslation(delta : float):
 		translationAngle += delta
 	else:
 		translationAngle -= delta
-	island.global_position = Vector2(cos(translationAngle * Speed) * radius, 
-									sin(translationAngle * Speed) * radius) + point.global_position
+	# self.position = Vector2(cos(translationAngle * Speed) * radius, 
+#							sin(translationAngle * Speed) * radius) + point.global_position
 
 func orbitRotation(delta : float):
 	if clockwise:
 		rotationAngle += delta
 	else:
 		rotationAngle -= delta
-	island.global_rotation = rotationAngle * speed
+	self.rotation = rotationAngle * speed
 	pass
