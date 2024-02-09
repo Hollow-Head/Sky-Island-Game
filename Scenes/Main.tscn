@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8gx26dayf4n6"]
+[gd_scene load_steps=11 format=3 uid="uid://c8gx26dayf4n6"]
 
 [ext_resource type="PackedScene" uid="uid://biwjt8wwbkgf8" path="res://Scenes/Player.tscn" id="1_8bx5u"]
 [ext_resource type="PackedScene" uid="uid://bwuam0srdawdw" path="res://Scenes/Island.tscn" id="2_2ubhq"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cll6tby4fm5ha" path="res://Sprites/Island_1.png" id="6_47hey"]
 [ext_resource type="Texture2D" uid="uid://pr6k62aa4j0r" path="res://Sprites/letterE.png" id="7_24c4v"]
 [ext_resource type="Texture2D" uid="uid://dgcruho3n0jms" path="res://Sprites/Key.png" id="7_f7h40"]
-[ext_resource type="PackedScene" uid="uid://cgwuib6ituju7" path="res://Scenes/TextBox.tscn" id="10_540bd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mobc3"]
 radius = 109.693
@@ -58,8 +57,6 @@ scale = Vector2(0.168966, 0.229328)
 texture = ExtResource("7_24c4v")
 
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
-
-[node name="TextBox" parent="." instance=ExtResource("10_540bd")]
 
 [connection signal="timeout" from="Game Time" to="Game Time" method="_on_timeout"]
 
