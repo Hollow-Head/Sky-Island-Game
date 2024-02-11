@@ -5,8 +5,10 @@ extends MarginContainer
 var choosed := false
 var id : int
 #var nomezinho := "CAMILA"
+var initScale : Vector2
 
 func _ready():
+	initScale = scale
 	pass
 
 func _process(delta):
@@ -18,4 +20,14 @@ func setButton(Name : String, ID : int):
 
 func _on_button_pressed():
 	choosed = true
+	pass
+
+
+func _on_button_mouse_entered():
+	scale.x = initScale.x * 1.15
+	pass
+
+
+func _on_button_mouse_exited():
+	scale.x = initScale.x
 	pass
