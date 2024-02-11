@@ -18,14 +18,14 @@ func _process(delta):
 
 func changeTimeText():
 	# Every "change" seconds the UI change
-	if time.minuto % change == 0:
+	if time.minute % change == 0:
 		clear()
-		if time.hora < 10 and time.minuto < 10:
-			add_text("0" + str(time.hora) + ":0" + str(time.minuto))
-		elif time.hora < 10 and time.minuto >= 10:
-			add_text("0" + str(time.hora) + ":" + str(time.minuto))
-		elif time.hora >= 10 and time.minuto < 10:
-			add_text("" + str(time.hora) + ":0" + str(time.minuto))
-		elif time.hora >= 10 and time.minuto >= 10:
-			add_text("" + str(time.hora) + ":" + str(time.minuto))
+		if time.hour < 10 and time.minute < 10:
+			add_text("0" + str(time.hour) + ":0" + str(time.minute))
+		elif time.hour < 10 and time.minute >= 10:
+			add_text("0" + str(time.hour) + ":" + str(time.minute))
+		elif time.hour >= 10 and time.minute < 10:
+			add_text("" + str(time.hour) + ":0" + str(time.minute))
+		elif time.hour >= 10 and time.minute >= 10:
+			add_text("" + str(time.hour) + ":" + str(time.minute))
 	pass

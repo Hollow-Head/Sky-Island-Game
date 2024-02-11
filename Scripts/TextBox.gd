@@ -20,6 +20,7 @@ var initPunctuationTime : float
 var finishedDisplaying := false
 
 var spriteHeight := 0.0
+var finished := false
 
 func _ready():
 	initLetterTime = letterTime
@@ -44,9 +45,12 @@ func displayText(textToDisplay : String):
 	global_position.y -= size.y + spriteHeight
 	label.text = ""
 	displayLetter()
+	finished = true
 	pass
 
 func displayLetter():
+	#if "Maybe both..." in text:
+		#print("SAIAM DA MINHA CASA ZÉ ROELAS")
 	label.text += text[letterIndex]
 	letterIndex += 1
 	if letterIndex >= text.length():

@@ -22,7 +22,6 @@ func _process(delta):
 
 func handlePlayerInteraction():
 	var nodes = get_overlapping_bodies()
-
 	for N in nodes.size():
 		if "Player" in nodes[N].name:
 			_checkPlayer += 1

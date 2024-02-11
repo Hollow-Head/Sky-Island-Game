@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3jn0p0f0yvx8"]
+[gd_scene load_steps=4 format=3 uid="uid://d3jn0p0f0yvx8"]
 
 [ext_resource type="Script" path="res://Scripts/Item.gd" id="1_nko6p"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/DialogHandlerKey01.gd" id="2_cghhy"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/DialogTextKey01.gd" id="3_0brhd"]
 
 [node name="Item" type="Area2D"]
 script = ExtResource("1_nko6p")
@@ -8,5 +10,11 @@ script = ExtResource("1_nko6p")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="DialogHandler" type="Node" parent="."]
+script = ExtResource("2_cghhy")
+
+[node name="DialogText" type="Node" parent="DialogHandler"]
+script = ExtResource("3_0brhd")
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

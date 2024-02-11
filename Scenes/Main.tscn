@@ -22,7 +22,6 @@ texture = ExtResource("2_v6oit")
 
 [node name="Game Time" type="Timer" parent="."]
 script = ExtResource("4_pqbyu")
-horaInicial = 6
 
 [node name="Rotate Island Experimental" parent="." instance=ExtResource("5_f5gd8")]
 position = Vector2(-2850, -1041)
