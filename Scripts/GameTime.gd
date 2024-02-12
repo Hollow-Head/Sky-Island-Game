@@ -4,8 +4,8 @@ extends Timer
 #TODO INCREASE EXPONENTIALLY
 
 @export_category("Time")
-@export var initialMinute : int
-@export var initialHour : int
+@export_range(0, 60) var initialMinute : int
+@export_range(0, 24) var initialHour : int
 
 var minute := 0
 var hour := 0
@@ -62,10 +62,10 @@ func partOfDay() -> String:
 
 func _on_timeout():
 	minute += 1
-	if minute == 60:
+	if minute >= 60:
 		minute = 0
 		hour += 1
-	if hour == 24:
+	if hour >= 24:
 		hour = 0
 	#print("Hora: " + str(hour) + " Minuto: " + str(minute))
 	pass
