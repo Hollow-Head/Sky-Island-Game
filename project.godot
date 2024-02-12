@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://Scripts/Autoload Scripts/DialogueManager.gd"
+GameTime="*res://Scenes/Autoload Scenes/GameTime.tscn"
 
 [input]
 

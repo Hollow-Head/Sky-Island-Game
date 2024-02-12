@@ -3,7 +3,6 @@ extends Node
 @onready var item = get_parent()
 @onready var sprite = get_parent().get_node("Sprite2D")
 @onready var dialogText = $DialogText
-@onready var globalTimer : Timer = get_node("/root/Main/Game Time")
 
 var answer : int
 
@@ -21,7 +20,7 @@ func handleDialog():
 		elif not hasAnswered02:
 			DialogueManager.startDialog(sprite.global_position, dialogText.text05, 100)
 		# This dialogue will only happen at night
-		elif globalTimer.night:
+		elif GameTime.night:
 			DialogueManager.startDialog(sprite.global_position, dialogText.text09, 100)
 		else:
 			DialogueManager.startDialog(sprite.global_position, dialogText.text04, 100)

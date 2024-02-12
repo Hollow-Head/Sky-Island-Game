@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb6x0ymqymywt"]
+
+[ext_resource type="Script" path="res://Scripts/Autoload Scripts/GameTime.gd" id="1_mpnlp"]
+
+[node name="Game Time" type="Timer"]
+script = ExtResource("1_mpnlp")
+initialHour = 6
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]
