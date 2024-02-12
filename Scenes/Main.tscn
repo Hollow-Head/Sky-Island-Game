@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8gx26dayf4n6"]
+[gd_scene load_steps=11 format=3 uid="uid://c8gx26dayf4n6"]
 
 [ext_resource type="PackedScene" uid="uid://biwjt8wwbkgf8" path="res://Scenes/Player.tscn" id="1_8bx5u"]
 [ext_resource type="PackedScene" uid="uid://bwuam0srdawdw" path="res://Scenes/Island.tscn" id="2_2ubhq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cll6tby4fm5ha" path="res://Sprites/Island_1.png" id="6_47hey"]
 [ext_resource type="Texture2D" uid="uid://pr6k62aa4j0r" path="res://Sprites/letterE.png" id="7_24c4v"]
 [ext_resource type="Texture2D" uid="uid://dgcruho3n0jms" path="res://Sprites/Key.png" id="7_f7h40"]
+[ext_resource type="PackedScene" uid="uid://b3wuam0kth61g" path="res://Scenes/Door.tscn" id="8_8au0a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mobc3"]
 radius = 109.693
@@ -15,6 +16,7 @@ radius = 109.693
 [node name="Main" type="Node"]
 
 [node name="Main Island" parent="." instance=ExtResource("2_2ubhq")]
+texture_filter = 1
 position = Vector2(-949, -21)
 scale = Vector2(1.51562, 1.51562)
 texture = ExtResource("2_v6oit")
@@ -28,31 +30,35 @@ speed = 0.0
 position = Vector2(-415, -3)
 
 [node name="Island" parent="Rotate Island Experimental" index="1"]
+texture_filter = 1
 position = Vector2(-5, 5)
 scale = Vector2(1, 1)
 texture = ExtResource("6_47hey")
 
-[node name="Item" parent="." instance=ExtResource("6_4fnw6")]
+[node name="Key" parent="." instance=ExtResource("6_4fnw6")]
 position = Vector2(0, -77)
 
-[node name="Sprite2D" parent="Item" index="0"]
+[node name="Sprite2D" parent="Key" index="0"]
 position = Vector2(70, -265)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_f7h40")
 
-[node name="CollisionShape2D" parent="Item" index="1"]
+[node name="CollisionShape2D" parent="Key" index="1"]
 position = Vector2(72.5, -279.5)
 shape = SubResource("CircleShape2D_mobc3")
 
-[node name="LetterE" type="Sprite2D" parent="Item"]
+[node name="LetterE" type="Sprite2D" parent="Key"]
 visible = false
 texture_filter = 1
 position = Vector2(69, -380)
 scale = Vector2(0.168966, 0.229328)
 texture = ExtResource("7_24c4v")
 
+[node name="Door" parent="." instance=ExtResource("8_8au0a")]
+position = Vector2(-240, -447)
+
 [node name="Player" parent="." instance=ExtResource("1_8bx5u")]
 
 [editable path="Rotate Island Experimental"]
-[editable path="Item"]
+[editable path="Key"]
 [editable path="Player"]

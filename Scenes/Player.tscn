@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_43em7"]
 radius = 33.0151
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_ydkxx")
 
@@ -23,14 +23,20 @@ shape = SubResource("CircleShape2D_43em7")
 [node name="CameraPlayer" type="Camera2D" parent="."]
 script = ExtResource("3_isuy2")
 
-[node name="ClockUI" type="ColorRect" parent="."]
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.2, 1.2)
+
+[node name="Clock" type="ColorRect" parent="UI"]
+layout_mode = 0
 offset_left = 274.0
 offset_top = -324.0
 offset_right = 346.0
 offset_bottom = -284.0
 color = Color(0, 0, 0, 1)
 
-[node name="TimeText" type="RichTextLabel" parent="ClockUI"]
+[node name="TimeText" type="RichTextLabel" parent="UI/Clock"]
 layout_mode = 0
 offset_left = 5.0
 offset_right = 301.0

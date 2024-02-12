@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://jhr1wtistsrg"]
+
+[ext_resource type="Script" path="res://Scripts/Slot.gd" id="1_w1rda"]
+[ext_resource type="Texture2D" uid="uid://lr15jh6u1m2g" path="res://Art/slot.png" id="2_x3hvb"]
+
+[node name="Slot" type="PanelContainer"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w1rda")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+texture = ExtResource("2_x3hvb")
+
+[node name="Item" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

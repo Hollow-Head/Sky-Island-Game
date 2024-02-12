@@ -3,6 +3,9 @@ extends Node
 @onready var item = get_parent()
 @onready var sprite = get_parent().get_node("Sprite2D")
 @onready var dialogText = $DialogText
+@onready var playerzinho : CharacterBody2D = get_node("/root/Main/Player")
+@onready var keyItemScene = preload("res://Scenes/Slot.tscn")
+var keyItem
 
 var answer : int
 
@@ -33,9 +36,11 @@ func handleDialog():
 			if answer == choose01.PRESIDENT:
 				DialogueManager.startDialog(sprite.global_position, dialogText.text03, 100)
 				finalizeAnswer01()
+				createItemKey()
 			elif answer == choose01.PIG_WITH_WINGS:
 				DialogueManager.startDialog(sprite.global_position, dialogText.text02, 100)
 				finalizeAnswer01()
+				createItemKey()
 		if not hasAnswered02:
 			if answer == choose02.YES:
 				DialogueManager.startDialog(sprite.global_position, dialogText.text06, 100)
@@ -54,3 +59,10 @@ func finalizeAnswer01():
 func finalizeAnswer02():
 	answer = -1
 	hasAnswered02 = true
+
+func createItemKey():
+	var name = "Key01"
+	var description = "It's a key"
+	var texture = ResourceLoader.load("res://Art/key.png")
+	GlobalInventory.addToInventory(name, description, texture)
+	GlobalInventory.hasKey01 = true

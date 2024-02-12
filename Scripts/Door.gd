@@ -15,13 +15,10 @@ func _process(delta):
 		letterE.visible = true
 	else:
 		letterE.visible = false
+	pass
 
-func print2Darray(array : Array):
-	for N in array.size():
-		for M in array[N].size():
-			print(array[N][M])
 
 func _on_body_exited(body):
-	# Probably will bug if player is really close to another interaction range
 	if "Player" in body.name:
 		DialogueManager.endDialog()
+	pass
