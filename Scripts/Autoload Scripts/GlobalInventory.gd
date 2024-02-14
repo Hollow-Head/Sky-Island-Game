@@ -1,5 +1,10 @@
 extends Node
 
+# TODO Pre created slots in inventory, when a item is created, the item will go to the nearest slot
+# TODO and the slot will receive the item specifications, etc.
+
+# TODO Probably will work on that and other things when someone besides me work on the game...
+
 @onready var player : CharacterBody2D = get_node("/root/Main/Player")
 
 @onready var itemScene = preload("res://Scenes/Slot.tscn")
