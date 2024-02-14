@@ -13,7 +13,10 @@ func _ready():
 	pass
 
 func _on_mouse_entered():
-	iconTexture.texture = selfIcon.texture
+	if selfIcon.texture:
+		iconTexture.texture = selfIcon.texture
+	else:
+		printerr("NO TEXTURE")
 	descriptionText.text = fullDescription
 	pass
 

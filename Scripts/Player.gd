@@ -44,12 +44,14 @@ func loadInventory():
 	for N in inventory.size():
 		#print(inventory[N].name)
 		inventoryNode.get_node("Slots").add_child(inventory[N])
+	printInventory()
 
 # The item must be removed, otherwise, it'll be fully deleted by the queue_free of the inventory node
 func deloadInventory():
 	for N in inventory.size():
 		inventoryNode.get_node("Slots").remove_child(inventory[N])
 
+# For debugging
 func printInventory():
 	var array := inventoryNode.get_node("Slots").get_children()
 	for N in array.size():
