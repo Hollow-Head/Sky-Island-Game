@@ -5,6 +5,5 @@
 [node name="Game Time" type="Timer"]
 script = ExtResource("1_mpnlp")
 initialHour = 6
-startDayTime = 4
 
 [connection signal="timeout" from="." to="." method="_on_timeout"]
