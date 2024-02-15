@@ -6,6 +6,7 @@ extends Timer
 @export_category("Time")
 @export_range(0, 60) var initialMinute : int
 @export_range(0, 24) var initialHour : int
+@export_enum("Nothing", "Dawn", "Morning", "Afternoon", "Night") var startDayTime : int
 
 var minute := 0
 var hour := 0
@@ -16,14 +17,15 @@ var afternoon : bool
 var night : bool
 
 func _ready():
-	minute = initialMinute
-	hour = initialHour
+	if not hasStartDayTime(startDayTime):
+		minute = initialMinute
+		hour = initialHour
 	start()
 	pass
 
 func _process(delta):
 	# Dawn
-	if hour >= 0 and hour <= 6:
+	if hour >= 0 and hour < 6:
 		dawn = true
 		morning = false
 		afternoon = false
@@ -59,6 +61,23 @@ func partOfDay() -> String:
 		return "Night"
 	else:
 		return "Error In TIME!!! TIME IS COLLAPSING"
+
+func hasStartDayTime(dayMoment : int) -> bool:
+	if dayMoment == 0:
+		return false
+	else:
+		match dayMoment:
+			1:
+				hour = 0
+			2:
+				hour = 6
+			3:
+				hour = 12
+			4:
+				hour = 18
+		minute = 0
+		return true
+	
 
 func _on_timeout():
 	minute += 1
